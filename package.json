@@ -1,0 +1,80 @@
+{
+  "name": "local-scoped-modules",
+  "displayName": "Local Scoped Modules",
+  "description": "local-scoped-modules extension for auto-completions",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./dist/index.cjs",
+  "contributes": {
+    "commands": [
+      {
+        "command": "local-scoped-modules.runVerbose",
+        "title": "Local Scoped Modules:run verbose"
+      },{
+        "command": "local-scoped-modules.removeVerbose",
+        "title": "Local Scoped Modules:remove verbose"
+       
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "ctrl+shift+8",
+        "command": "local-scoped-modules.addVerbose",
+        "title": "Local Scoped Modules:add verbose"
+      },{
+        "key": "ctrl+shift+7",
+        "command": "local-scoped-modules.removeVerbose",
+        "title": "Local Scoped Modules:remove verbose"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Local Scoped Modules",
+      "properties": {
+        "local-scoped-modules.setting": {
+          "type": "string",
+          "description": "Setting for Local Scoped Modules",
+          "default": {
+            "rootPathMode": "package.json",
+            "verbose": false,
+            "useVerboseOnSave":false,
+            "immediatelySaveWhenRemoveVerbose":true,
+            "useAutoCompletion": true,
+            "useAutoReselectAfterDelete": true,
+            "useResolvedIdForAutoReselect": true,
+            "ignore": [
+              "node_modules",
+              ".DS_Store",
+              ".gitignore"
+            ],
+            "pluginConfigFilename": "local-scoped-modules.config.js"
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "vscode-test",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.86.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.3"
+  }
+}
