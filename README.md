@@ -20,13 +20,13 @@ It is a vscode auto-completion complement  for  project using
 
 *  `auto-completion`
 
-    ![auto-completion](images/auto-completion.gif)
+    ![auto-completion](https://raw.githubusercontent.com/zengnificant/vscode-local-scoped-modules/master/images/auto-completion.gif)/auto-completion.gif)
 
 *  `reselect after backspace`
 
     It is to quickly  delete some routes.
 
-    ![triggerReselect](images/triggerReselect.gif)
+    ![triggerReselect](https://raw.githubusercontent.com/zengnificant/vscode-local-scoped-modules/master/images/auto-completion.gif)/auto-completion.gif)
 
 *  `verbose`
 
