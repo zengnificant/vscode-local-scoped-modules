@@ -20,18 +20,18 @@ It is a vscode auto-completion complement  for  project using
 
 *  `auto-completion`
 
-    ![auto-completion](https://raw.githubusercontent.com/zengnificant/vscode-local-scoped-modules/master/images/auto-completion.gif)/auto-completion.gif)
+    ![auto-completion](https://raw.githubusercontent.com/zengnificant/vscode-local-scoped-modules/master/images/auto-completion.gif)
 
 *  `reselect after backspace`
 
     It is to quickly  delete some routes.
 
-    ![triggerReselect](https://raw.githubusercontent.com/zengnificant/vscode-local-scoped-modules/master/images/auto-completion.gif)/auto-completion.gif)
+    ![triggerReselect](https://raw.githubusercontent.com/zengnificant/vscode-local-scoped-modules/master/images/triggerReselect.gif)
 
 *  `verbose`
 
     This is to show  where source  is.
-    ![verbose](images/verbose.gif)
+    ![verbose](https://raw.githubusercontent.com/zengnificant/vscode-local-scoped-modules/master/images/verbose.gif)
 
 
 
