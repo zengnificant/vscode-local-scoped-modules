@@ -13,10 +13,21 @@
     calleeNames: ['require', 'import']
 }
 
+
+const  has=(arr,one)=>{
+
+    return  arr.find(el=>{
+          return el.name===one.name
+      })
+  }
 const getDefaultOpts=()=>{
     const {rootPrefix}=defaultObts
     let scope={name:rootPrefix,dir:rootPrefix}
-    defaultObts.scopes.push(scope)
+
+    if(!has(defaultObts.scopes,scope)){
+        defaultObts.scopes.push(scope)
+    }
+  
     return defaultObts
 }
 

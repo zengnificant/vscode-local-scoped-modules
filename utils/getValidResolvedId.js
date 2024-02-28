@@ -8,12 +8,6 @@ const escapeStringRegexp = (() => {
     }
 })()
 
-const  has=(arr,one)=>{
-
-  return  arr.find(el=>{
-        return el.name===one.name
-    })
-}
 
 
 function getValidResolvedId(id, opts) {
@@ -29,10 +23,7 @@ function getValidResolvedId(id, opts) {
     if (!check1) {
         return null;
     }
-    let  rootScope={name:rootPrefix,dir:rootPrefix}
-    if(!has(scopes,rootScope)){
-        scopes.push(rootScope)
-    }
+   
   
     let ret=null
    

@@ -1,10 +1,18 @@
 {
   "name": "local-scoped-modules",
   "displayName": "Local Scoped Modules",
+  "publisher": "zengnificant",
   "description": "local-scoped-modules extension for auto-completions",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "keywords": [
+		"local modules"
+	],
   "engines": {
     "vscode": "^1.86.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zengnificant/vscode-local-scoped-modules.git"
   },
   "categories": [
     "Other"
@@ -12,7 +20,7 @@
   "activationEvents": [
     "*"
   ],
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "contributes": {
     "commands": [
       {
@@ -21,7 +29,6 @@
       },{
         "command": "local-scoped-modules.removeVerbose",
         "title": "Local Scoped Modules:remove verbose"
-       
       }
     ],
     "keybindings": [
@@ -67,6 +74,7 @@
     "test": "vscode-test",
     "build": "vite build"
   },
+  "license": "MIT",
   "devDependencies": {
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",

@@ -8,3 +8,6 @@ All notable changes to the "local-scoped-modules" extension will be documented i
 - Initial release(1.0.0)
 
   * support feature of `auto-completion`,`reselect after backspace` and `verbose`.
+
+-  v1.0.1
+   * fix a bug of duplicated  CompletionItem of "~/".

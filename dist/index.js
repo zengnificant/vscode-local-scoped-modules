@@ -61,17 +61,24 @@ const fn$4 = () => {
     return getRoot2();
   return getRoot2();
 };
-const require$1 = module$1.createRequire(typeof document === "undefined" ? require("url").pathToFileURL(__filename).href : _documentCurrentScript && _documentCurrentScript.src || new URL("index.cjs", document.baseURI).href);
+const require$1 = module$1.createRequire(typeof document === "undefined" ? require("url").pathToFileURL(__filename).href : _documentCurrentScript && _documentCurrentScript.src || new URL("index.js", document.baseURI).href);
 const defaultObts = {
   rootPrefix: "~",
   scopePrefix: "@",
   scopes: [],
   calleeNames: ["require", "import"]
 };
+const has = (arr, one) => {
+  return arr.find((el) => {
+    return el.name === one.name;
+  });
+};
 const getDefaultOpts = () => {
   const { rootPrefix } = defaultObts;
   let scope = { name: rootPrefix, dir: rootPrefix };
-  defaultObts.scopes.push(scope);
+  if (!has(defaultObts.scopes, scope)) {
+    defaultObts.scopes.push(scope);
+  }
   return defaultObts;
 };
 const getConfigFile = (filename) => {
@@ -326,11 +333,6 @@ const escapeStringRegexp$1 = /* @__PURE__ */ (() => {
     return string.replace(matchOperatorsRegex, "\\$&");
   };
 })();
-const has = (arr, one) => {
-  return arr.find((el) => {
-    return el.name === one.name;
-  });
-};
 function getValidResolvedId$1(id, opts) {
   let { rootPrefix, scopePrefix, scopes } = opts;
   if (id == null)
@@ -339,10 +341,6 @@ function getValidResolvedId$1(id, opts) {
   const check1 = id === rootPrefix || id.startsWith(`${rootPrefix}/`) && id.split(rootPrefix).length === 2 || regex.test(id) && id.split(scopePrefix).length === 2;
   if (!check1) {
     return null;
-  }
-  let rootScope = { name: rootPrefix, dir: rootPrefix };
-  if (!has(scopes, rootScope)) {
-    scopes.push(rootScope);
   }
   let ret = null;
   scopes.some((scope, i) => {

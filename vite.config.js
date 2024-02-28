@@ -22,7 +22,7 @@ export default defineConfig({
                     return 'index.mjs'
                 }
            
-            return `index.cjs`
+            return `index.js`
           },
            
             formats:['cjs']
